@@ -57,7 +57,7 @@ public class UTFStringReaderTest {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        
+
     }
 
     @Test
