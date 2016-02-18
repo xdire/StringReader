@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  */
 public class UTFStringReaderTest {
 
-    String utf8String = "hello€";
+    String utf8String = "ߺ0ࠀhello€";
     String utf16String = "\u0068" + "\u0065" + "\u006c" + "\u006c" + "\u006f" + "\u0080";
 
     UTFStringReader stringReader;
@@ -38,6 +38,8 @@ public class UTFStringReaderTest {
             printBytesAsBin(bytes);
             stringReader = new UTFStringReader(bytes);
 
+            System.out.println("FINALLY DETECTED ENCODING: " + stringReader.getEncoding());
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -53,6 +55,8 @@ public class UTFStringReaderTest {
             printBytesAsHex(bytes);
             printBytesAsBin(bytes);
             stringReader = new UTFStringReader(bytes);
+
+            System.out.println("FINALLY DETECTED ENCODING: " + stringReader.getEncoding());
 
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
